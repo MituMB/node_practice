@@ -1,6 +1,8 @@
 //dependencies
 const http = require('http');
-const url = require('url');
+// const url = require('url');
+// const {StringDecoder} = require('string_decoder');
+const {handleReqRes} = require('./helpers/handleReqRes');
 
 //app object- module scaffolding
 const app = {}
@@ -19,14 +21,7 @@ app.createServer = () => {
 }
 
 //handle request response
-app.handleRequest = (req,res) => {
-    //handle request
-    //get the url and parse it
-    const parsedUrl = url.parse(req.url, true);
-
-    //response handle
-    res.end('hello ritu')
-}
+app.handleReqRes = handleReqRes;
 
 //start the server
 app.createServer()
